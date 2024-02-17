@@ -14,7 +14,7 @@ export default function initFactory(FB) {
     params = defaults({}, params, {
       autoLogAppEvents : true,
       xfbml            : true,
-      version: 'v15.0',
+      version: 'v19.0',
     });
     FB.init(params);
   };
