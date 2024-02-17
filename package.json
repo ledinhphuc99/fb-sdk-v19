@@ -1,0 +1,46 @@
+{
+  "name": "fb-sdk-v15",
+  "version": "1.1.0",
+  "description": "Wraps around the Facebook Javascript SDK to make it usable as a ES6 module",
+  "main": "./lib/index.js",
+  "repository": "https://github.com/erikhagreis/fb-sdk-wrapper",
+  "author": "Erik Hagreis",
+  "keywords": [
+    "facebook",
+    "graph",
+    "sdk",
+    "es6",
+    "promise"
+  ],
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "npm run clean && babel src --out-dir lib --ignore \"src/**/*.spec.js\"",
+    "clean": "rm -rf lib",
+    "prepare": "npm run build",
+    "test": "jest",
+    "version": "npm run build && git add lib"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0",
+    "lint-staged": "^10.2.11",
+    "lodash": "^4.17.19",
+    "prettier": "^2.0.5"
+  },
+  "lint-staged": {
+    "src/**/*.*": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test"
+    }
+  }
+}
