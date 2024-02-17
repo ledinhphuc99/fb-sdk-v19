@@ -16,7 +16,7 @@
   "private": false,
   "scripts": {
     "build": "babel src --out-dir lib --ignore \"src/**/*.spec.js\"",
-    "clean": "rmdir lib",
+    "clean": "rm -rf lib",
     "prepare": "npm run build",
     "test": "jest",
     "version": "npm run build && git add lib"
