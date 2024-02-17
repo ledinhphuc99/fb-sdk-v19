@@ -15,7 +15,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "npm run clean && babel src --out-dir lib --ignore \"src/**/*.spec.js\"",
+    "build": "babel src --out-dir lib --ignore \"src/**/*.spec.js\"",
     "clean": "rmdir lib",
     "prepare": "npm run build",
     "test": "jest",
